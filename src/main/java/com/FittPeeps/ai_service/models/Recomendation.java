@@ -23,7 +23,7 @@ public class Recomendation {
     private String activityId;
     private String activityType;
     private String recommendationText;
-    private List<String> improvments;
+    private List<String> improvements;
     private List<String> suggestions;
     private List<String> safetyTips;
 
