@@ -1,6 +1,6 @@
 package com.FittPeeps.ai_service.controllers;
 
-import com.FittPeeps.ai_service.models.Recomendation;
+import com.FittPeeps.ai_service.models.Recommendation;
 //import com.FittPeeps.ai_service.services.RecomendationService;
 import com.FittPeeps.ai_service.services.RecommendationService;
 import lombok.RequiredArgsConstructor;
@@ -20,15 +20,15 @@ public class RecommendationController {
 private  final RecommendationService recommendationService;
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Recomendation>> getUserRecommendations(@PathVariable String userId) {
-        List<Recomendation> recommendations= recommendationService.getRecommendationsByUserId(userId);
+    public ResponseEntity<List<Recommendation>> getUserRecommendations(@PathVariable String userId) {
+        List<Recommendation> recommendations= recommendationService.getRecommendationsByUserId(userId);
         return ResponseEntity.ok(recommendations);
     }
 
 
     @GetMapping("/activity/{activityId}")
     public ResponseEntity<?> getActivityRecommendation(@PathVariable String activityId) {
-        Recomendation recomendation= recommendationService.getActivityRecommendation(activityId);
+        Recommendation recomendation= recommendationService.getActivityRecommendation(activityId);
         if(recomendation == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("NO Recommendation found for this activity : " + activityId);
         }

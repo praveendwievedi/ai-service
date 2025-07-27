@@ -16,13 +16,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Recomendation {
+public class Recommendation {
     @Id
     private String id;
     private String userId;
     private String activityId;
     private String activityType;
-    private String recommendationText;
+    private String recommendation;
     private List<String> improvements;
     private List<String> suggestions;
     private List<String> safetyTips;
