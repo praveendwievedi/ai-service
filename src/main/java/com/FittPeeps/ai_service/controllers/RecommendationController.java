@@ -34,4 +34,9 @@ private  final RecommendationService recommendationService;
         }
         return ResponseEntity.ok(recomendation);
     }
+
+    @GetMapping("/test")
+    public String testConnection() {
+        return "AI Service is live";
+    }
 }
